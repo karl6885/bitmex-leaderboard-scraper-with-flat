@@ -3,12 +3,12 @@ name: data
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: 1 * * * *
+    - cron: 21 * * * *
   workflow_dispatch: {}
   push:
     paths:
       - .github/workflows/flat.yml
-      # - ./postprocess.ts
+      - ./postprocess.ts
 
 jobs:
   scheduled:
@@ -23,4 +23,4 @@ jobs:
         with:
           http_url: https://api.btctools.io/api/leaderboard
           downloaded_filename: bitmex-leaderboard.json
-          # postprocess: ./postprocess.ts
+          postprocess: ./postprocess.ts
