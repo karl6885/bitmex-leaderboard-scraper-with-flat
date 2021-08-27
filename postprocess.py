@@ -8,6 +8,7 @@ if __name__ == "__main__":
     with open('bitmex-leaderboard.json', 'r') as f:
         data = json.load(f)
     new_raw_df = pd.DataFrame(data['data'])
+    new_raw_df['timestamp'] = pd.to_datetime(new_raw_df['timestamp'], unit='s')
 
     output_fname = "df_output.csv"
     if not os.path.exists(output_fname):
