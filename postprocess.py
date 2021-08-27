@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import json
+import os
 
 if __name__ == "__main__":
   
@@ -8,6 +9,10 @@ if __name__ == "__main__":
         data = json.load(f)
     new_raw_df = pd.DataFrame(data['data'])
 
-    old_df = pd.read_csv("df_output.csv")
-    new_df = pd.concat([old_df, new_raw_df])
-    new_df.to_csv("df_output.csv")
+    output_fname = "df_output.csv"
+    if not os.path.exists(output_fname):
+        new_raw_df.to_csv(output_fname)
+    else:
+        old_df = pd.read_csv(output_fname)
+        new_df = pd.concat([old_df, new_raw_df])
+        new_df.to_csv(output_fname)
