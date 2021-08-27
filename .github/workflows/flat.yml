@@ -3,7 +3,7 @@ name: data
 # Controls when the workflow will run
 on:
   schedule:
-    - cron: 21 * * * *
+    - cron: '31 * * * *'
   workflow_dispatch: {}
   push:
     paths:
