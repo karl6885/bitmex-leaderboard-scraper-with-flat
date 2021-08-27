@@ -8,7 +8,7 @@ on:
   push:
     paths:
       - .github/workflows/flat.yml
-      - ./postprocess.ts
+      - postprocess.ts
 
 jobs:
   scheduled:
@@ -23,4 +23,4 @@ jobs:
         with:
           http_url: https://api.btctools.io/api/leaderboard
           downloaded_filename: bitmex-leaderboard.json
-          postprocess: ./postprocess.ts
+          postprocess: postprocess.ts
