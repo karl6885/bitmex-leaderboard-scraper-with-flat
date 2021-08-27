@@ -1,4 +1,4 @@
-// install requirements with pip
+// Install requirements with pip
 const pip_install = Deno.run({
     cmd: ['python', '-m', 'pip', 'install', '-r', 'requirements.txt'],
 });
