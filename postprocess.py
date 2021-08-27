@@ -13,6 +13,6 @@ if __name__ == "__main__":
     if not os.path.exists(output_fname):
         new_raw_df.to_csv(output_fname)
     else:
-        old_df = pd.read_csv(output_fname)
+        old_df = pd.read_csv(output_fname, index_col=0)
         new_df = pd.concat([old_df, new_raw_df])
         new_df.to_csv(output_fname)
